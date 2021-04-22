@@ -1,0 +1,69 @@
+<h1>Add master data</h1>
+<br>
+<div class="container">
+
+  <form #materialForm="ngForm" (ngSubmit)="onSubmit()">
+    {{materialForm.value | json}}
+     <hr>
+     {{ materialModel | json}}
+<br>
+     {{materialForm.form.valid}}
+     <br>
+  
+  <div class="row">
+    <div class="col">
+      <label for="mname">Material Name</label>
+      <input type="text" class="form-control" name="mname" [(ngModel)]="materialModel.mname" id="mname" required>
+    </div>
+    <div class="col">
+      <label for="mcount">Material Count</label>
+      <input type="number" class="form-control" name="mcount" [(ngModel)]="materialModel.mcount" id="mcount" required>
+    </div>
+  </div><br>
+
+  <div class="row">
+    <div class="col">
+      <label for="mtype">Material Type</label>
+      <input type="text" class="form-control" name="mtype" [(ngModel)]="materialModel.mtype" id="mtype" required>
+    </div>
+    <div class="col">
+      <label for="uoml">UOM Label</label>
+      <input type="text" class="form-control" name="uoml" [(ngModel)]="materialModel.uoml" id="uoml" required>
+    </div>
+  </div><br>
+
+
+  <div class="row">
+    <div class="col">
+      <label for="uom">UOM</label>
+      <input type="number" class="form-control" name="uom" [(ngModel)]="materialModel.uom" id="uom" required>
+    </div>
+    <div class="col">
+      <label for="procl">Procurement Location</label>
+      <input type="text" class="form-control" name="procl" [(ngModel)]="materialModel.procl" id="procl" required>
+    </div>
+  </div><br>
+
+<div class="row">
+    <div class="col">
+      <label for="procv">Procurement Vendor</label>
+      <input type="text" class="form-control" name="procv" [(ngModel)]="materialModel.procv" id="procv" required>
+    </div>
+    <div class="col">
+      <label for="cost">Procurement Cost</label>
+      <input type="number" class="form-control" name="cost" [(ngModel)]="materialModel.cost" id="cost" required>
+    </div>
+  </div><br>
+
+  <div class="row">
+   
+    <div class="col col-md-6">
+      <label for="lcost">Logistics Cost</label>
+      <input type="number" class="form-control" name="lcost" [(ngModel)]="materialModel.lcost" id="lcost" required>
+    </div>
+  </div><br>
+
+  <button type="submit" [disabled]="materialForm.form.invalid" class="btn btn-primary">Submit</button>
+</form>
+
+</div>
