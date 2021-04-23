@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { AngularFireModule } from "@angular/fire";
+import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { AngularFireDatabaseModule } from "@angular/fire/database";
 
-import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AddmasterComponent } from './addmaster/addmaster.component';
 import { ViewmasterComponent } from './viewmaster/viewmaster.component';
+import { environment } from 'src/environments/environment';
+import { MasterService } from './shared/master.service';
 
 @NgModule({
   declarations: [
@@ -14,15 +18,18 @@ import { ViewmasterComponent } from './viewmaster/viewmaster.component';
     AddmasterComponent,
     ViewmasterComponent,
     
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    AngularFireDatabaseModule
  
   ],
-  providers: [],
+  providers: [MasterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

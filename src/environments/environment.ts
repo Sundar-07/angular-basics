@@ -4,6 +4,15 @@
 
 export const environment = {
   production: false,
+  firebaseConfig:{
+    apiKey: "AIzaSyA6ysmjLieQ_rRSo3AEIfW8DpCcrlUMYLs",
+    authDomain: "angular-basics-9d52a.firebaseapp.com",
+    databaseURL: "https://angular-basics-9d52a-default-rtdb.firebaseio.com",
+    projectId: "angular-basics-9d52a",
+    storageBucket: "angular-basics-9d52a.appspot.com",
+    messagingSenderId: "396503601890",
+    appId: "1:396503601890:web:2a7b72cfca705caebf04bb"
+  }
 };
 
 /*
